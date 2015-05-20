@@ -1,0 +1,66 @@
+%global release_name juno
+
+Name:		python-gbpclient
+Version:	@VERSION@
+Release:	@RELEASE@%{?dist}
+Summary:	Python API and CLI for OpenStack Neutron Group Based Policy
+License:	ASL 2.0
+URL:		https://launchpad.net/group-based-policy-client
+Source0:	https://launchpad.net/group-based-policy-client/%{release_name}/%{version}/+download/python-group-based-policy-client-%{version}.tar.gz
+BuildArch:	noarch
+BuildRequires:	python2-devel
+BuildRequires:	python-pbr
+BuildRequires:	python-setuptools
+Requires:	python-neutronclient = 2.3.9
+Requires:	python-heatclient >= 0.2.9
+
+%description
+Client library and command line tool for interacting with OpenStack
+Neutron's Group Based Policy (GBP) extension API.
+
+%prep
+%setup -qn python-group-based-policy-client-%{version}
+# Remove precompiled egg-info
+rm -rf *.egg-info
+# Unused pbr dependency
+rm gbpclient/version.py
+
+%build
+%{__python2} setup.py build
+
+%install
+%{__python2} setup.py install -O1 --skip-build --install-data / --root %{buildroot}
+# Remove unused files
+rm -rf %{buildroot}%{python2_sitelib}/gbpclient/tests
+
+%files
+%doc LICENSE
+%doc README.rst
+%{_bindir}/gbp
+%{python2_sitelib}/gbpclient
+%{python2_sitelib}/python_group_based_policy_client-*.egg-info
+
+%changelog
+* Mon May 18 2015 Amit Bose <bose@noironetworks.com> - 0.9.1-1
+- [Placeholder]
+
+* Fri Jan  9 2015 Robert Kukura <rk@theep.net> - 0.9.0-1
+- Update to upstream 0.9.0
+- Remove precompiled egg-info
+
+* Mon Jan  5 2015 Robert Kukura <rk@theep.net> - 0.9.0-0.5.rc1
+- Fix Release tag to include dist
+
+* Mon Jan  5 2015 Robert Kukura <rk@theep.net> - 0.9.0-0.4.rc1
+- Update to 0.9.0 rc1
+- Remove Group tag
+- Use python2_sitelib instead of python_sitelib
+
+* Mon Dec 15 2014 Robert Kukura <rk@theep.net> - 0.1-0.3.2d83b68git
+- Update to latest upstream commit
+
+* Thu Dec  4 2014 Robert Kukura <rk@theep.net> - 0.1-0.2.7821534git
+- Update to commit with renamed resources
+
+* Wed Nov 19 2014 Robert Kukura <rk@theep.net> - 0.1-0.1.f269444git
+- Initial package for Fedora

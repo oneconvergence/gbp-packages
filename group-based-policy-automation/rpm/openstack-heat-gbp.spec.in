@@ -1,0 +1,62 @@
+%global release_name juno
+
+Name:		openstack-heat-gbp
+Version:	@VERSION@
+Release:	@RELEASE@%{?dist}
+Summary:	Group Based Policy add-on for OpenStack Orchestration
+License:	ASL 2.0
+URL:		https://launchpad.net/group-based-policy-automation
+Source0:	https://launchpad.net/group-based-policy-automation/%{release_name}/%{version}/+download/group-based-policy-automation-%{version}.tar.gz
+Patch0:		0001-remove-runtime-dependency-on-pbr.patch
+BuildArch:	noarch
+BuildRequires:	python2-devel
+BuildRequires:	python-pbr
+BuildRequires:	python-setuptools
+Requires:	openstack-heat-engine >= 2014.2
+Requires:	openstack-heat-engine < 2014.3
+Requires:	python-gbpclient >= 0.9.1
+
+%description
+Heat add-on for Group Based Policy (GBP), which provides declarative
+abstractions for achieving scalable intent-based infrastructure
+automation. GBP complements the OpenStack networking model with the
+notion of policies that can be applied between groups of network
+endpoints.
+
+%prep
+%setup -qn group-based-policy-automation-%{version}
+%patch0 -p1
+# Remove precompiled egg-info
+rm -rf *.egg-info
+find gbpautomation -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
+sed -i 's/RPMVERSION/%{version}/' gbpautomation/__init__.py
+rm -f requirements.txt
+
+%build
+%{__python2} setup.py build
+
+%install
+%{__python2} setup.py install -O1 --install-data / --skip-build --root %{buildroot}
+# Remove unused files
+rm -rf %{buildroot}%{python2_sitelib}/gbpautomation/heat/db
+rm -rf %{buildroot}%{python2_sitelib}/gbpautomation/heat/tests
+
+%files
+%doc LICENSE
+%doc README.rst
+%{python2_sitelib}/gbpautomation
+%{python2_sitelib}/group_based_policy_automation*.egg-info
+
+%changelog
+* Mon May 18 2015 Amit Bose <bose@noironetworks.com> - 2014.2.1-1
+- [Placeholder]
+
+* Fri Jan  9 2015 Robert Kukura <rk@theep.net> - 2014.2-1
+- Update to upstream 2014.2
+- Remove precompiled egg-info
+
+* Mon Jan  5 2015 Robert Kukura <rk@theep;net> - 2014.2-0.2.rc1
+- Update to rc1
+
+* Tue Dec 16 2014 Robert Kukura <rk@theep.net> - 2014.2-0.1.bf941b5git
+- Initial package for Fedora

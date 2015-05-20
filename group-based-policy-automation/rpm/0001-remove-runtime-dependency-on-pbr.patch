@@ -1,0 +1,26 @@
+From 8bc6e475eb3bc3edaffc9bb4fb989f5664cc313c Mon Sep 17 00:00:00 2001
+From: Robert Kukura <kukura@noironetworks.com>
+Date: Tue, 16 Dec 2014 16:15:42 -0500
+Subject: [PATCH] remove runtime dependency on pbr
+
+---
+ gbpautomation/__init__.py | 6 +-----
+ 1 file changed, 1 insertion(+), 5 deletions(-)
+
+diff --git a/gbpautomation/__init__.py b/gbpautomation/__init__.py
+index c16d389..7fce101 100644
+--- a/gbpautomation/__init__.py
++++ b/gbpautomation/__init__.py
+@@ -10,8 +10,4 @@
+ # License for the specific language governing permissions and limitations
+ # under the License.
+ 
+-import pbr.version
+-
+-
+-__version__ = pbr.version.VersionInfo(
+-    'group-based-policy-automation').version_string()
++__version__ = "RPMVERSION"
+-- 
+1.9.3
+
