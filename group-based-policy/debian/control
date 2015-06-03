@@ -1,0 +1,50 @@
+Source: group-based-policy
+Section: python
+Priority: optional
+Maintainer: Mandeep Dhami <dhami@noironetworks.com>
+Build-Depends: debhelper (>= 9), python-setuptools (>= 3.3), python-all (>= 2.7)
+Build-Depends-Indep:
+ neutron-server (>= 1:2014.2),
+ neutron-plugin-ml2 (>= 1:2014.2),
+ python-cliff (>= 1.6.0),
+ python-coverage (>= 3.6),
+ python-fixtures (>= 0.3.14),
+ python-hacking (>= 0.9.2),
+ python-mock (>= 1.0),
+ python-oslosphinx (>= 2.2.0),
+ python-heatclient (>= 0.2.10),
+ python-neutronclient (>= 1:2.3.8),
+ python-sphinx (>> 1.2.0),
+ python-subunit (>= 0.0.18),
+ python-requests-mock (>= 0.4.0),
+ python-testtools (>= 0.9.34),
+ python-webtest (>= 2.0.15),
+ subunit (>= 0.0.18),
+ testrepository (>= 0.0.18)
+Standards-Version: 3.9.5
+Homepage: http://wiki.openstack.org/GroupBasedPolicy
+Vcs-Git: git://git.openstack.org/stackforge/group-based-policy
+Vcs-Browser: http://git.openstack.org/cgit/stackforge/group-based-policy/tree/
+
+Package: group-based-policy
+Architecture: all
+Depends: neutron-server (>= 1:2014.2), neutron-plugin-ml2 (>= 1:2014.2), ${misc:Depends}, ${python:Depends}
+Description: Neutron plugin for Openstack Group Based Policy
+ Group Based Policy (GBP) provides declarative abstractions for achieving
+ scalable intent-based infrastructure automation.
+ .
+ GBP complements the OpenStack networking model with the notion of policies
+ that can be applied between groups of network endpoints. As users look beyond
+ basic connectivity, richer network services with diverse implementations and
+ network properties are naturally expressed as policies. Examples include
+ service chaining, QoS, path properties, access control, etc.
+ .
+ GBP allows application administrators to express their networking requirements
+ using a Group and a Policy Rules-Set abstraction. The specifics of policy
+ rendering are left to the underlying pluggable policy driver.
+ .
+ GBP model also supports a redirect operation that makes it easy to abstract
+ and consume complex network service chains and graphs.
+ .
+ Checkout the GBP wiki page for more detailed information:
+ http://wiki.openstack.org/GroupBasedPolicy

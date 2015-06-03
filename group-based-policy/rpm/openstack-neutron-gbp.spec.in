@@ -1,4 +1,5 @@
 %global release_name juno
+%define version_py @VERSION_PY@
 
 Name:		openstack-neutron-gbp
 Version:	@VERSION@
@@ -22,7 +23,7 @@ complements the OpenStack networking model with the notion of policies
 that can be applied between groups of network endpoints.
 
 %prep
-%setup -qn group-based-policy-%{version}
+%setup -qn group-based-policy-%{version_py}
 %patch0 -p1
 find gbpservice -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
 sed -i 's/RPMVERSION/%{version}/' gbpservice/__init__.py
@@ -47,12 +48,12 @@ gbp-db-manage --config-file /etc/neutron/neutron.conf upgrade head
 %doc etc/grouppolicy.ini
 %{_bindir}/gbp-db-manage
 %{python2_sitelib}/gbpservice
-%{python2_sitelib}/group_based_policy-%%{version}*.egg-info
+%{python2_sitelib}/group_based_policy*.egg-info
 %{_sysconfdir}/group-based-policy/policy.d/policy.json
 
 %changelog
-* Mon May 18 2015 Amit Bose <bose@noironetworks.com> - 2014.2.2-1
-- [Placeholder]
+* Thu Mar 26 2015 Amit Bose <bose@noironetworks.com> - 2014.2.1-1
+- Update to 2014.2.1
 
 * Wed Jan  7 2015 Robert Kukura <rk@theep.net> - 2014.2-1
 - Update to upstream 2014.2

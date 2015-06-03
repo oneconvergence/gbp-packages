@@ -1,0 +1,23 @@
+group-based-policy (@VERSION@-@REVISION@) trusty; urgency=low
+
+  * Update to 2014.2.1 
+
+ -- Amit Bose <bose@noironetworks.com>  Thu, 26 Mar 2015 22:53:44 +0000
+
+group-based-policy (2014.2-1) utopic; urgency=low
+
+  * Updated upstream to Juno release 
+
+ -- Mandeep Dhami <dhami@noironetworks.com>  Sun, 11 Jan 2015 22:53:44 +0000
+
+group-based-policy (2014.2~rc3-1) utopic; urgency=medium
+
+  * Updated upstream to rc3 
+
+ -- Mandeep Dhami <dhami@noironetworks.com>  Tue, 06 Jan 2015 05:54:57 +0000
+
+group-based-policy (2014.2~rc2-1) utopic; urgency=low
+
+  * Initial release
+
+ -- Mandeep Dhami <dhami@noironetworks.com>  Tue, 30 Dec 2014 07:43:18 +0000

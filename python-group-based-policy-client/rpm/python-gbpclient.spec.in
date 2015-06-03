@@ -1,4 +1,5 @@
 %global release_name juno
+%define version_py @VERSION_PY@
 
 Name:		python-gbpclient
 Version:	@VERSION@
@@ -19,7 +20,7 @@ Client library and command line tool for interacting with OpenStack
 Neutron's Group Based Policy (GBP) extension API.
 
 %prep
-%setup -qn python-group-based-policy-client-%{version}
+%setup -qn python-group-based-policy-client-%{version_py}
 # Remove precompiled egg-info
 rm -rf *.egg-info
 # Unused pbr dependency
@@ -41,8 +42,8 @@ rm -rf %{buildroot}%{python2_sitelib}/gbpclient/tests
 %{python2_sitelib}/python_group_based_policy_client-*.egg-info
 
 %changelog
-* Mon May 18 2015 Amit Bose <bose@noironetworks.com> - 0.9.1-1
-- [Placeholder]
+* Tue Apr 7 2015 Amit Bose <bose@noironetworks.com> - 0.9.1-1
+- Update to 0.9.1
 
 * Fri Jan  9 2015 Robert Kukura <rk@theep.net> - 0.9.0-1
 - Update to upstream 0.9.0

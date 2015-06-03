@@ -1,4 +1,5 @@
 %global release_name juno
+%define version_py @VERSION_PY@
 
 Name:		python-django-horizon-gbp
 Version:	@VERSION@
@@ -36,7 +37,7 @@ model with the notion of policies that can be applied between groups
 of network endpoints.
 
 %prep
-%setup -qn group-based-policy-ui-%{version}
+%setup -qn group-based-policy-ui-%{version_py}
 find gbpui -name \*.py -exec sed -i '/\/usr\/bin\/env python/{d;q}' {} +
 rm -f requirements.txt
 
@@ -46,8 +47,8 @@ rm -f requirements.txt
 %install
 %{__python2} setup.py install -O1 --skip-build --install-data / --root %{buildroot}
 # Remove unused files
-rm -rf %{buildroot}%{python2_sitelib}/gbpui/horizon
-rm -rf %{buildroot}%{python2_sitelib}/gbpui/openstack_dashboard
+rm -rf %{buildroot}%{python2_sitelib}/gbpui/horizon/tests
+rm -rf %{buildroot}%{python2_sitelib}/gbpui/openstack_dashboard/tests
 # Relocate dashboard panels to /usr/share
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard
@@ -65,8 +66,8 @@ mv %{buildroot}%{python2_sitelib}/gbpui/_*_gbp_project_add_panel* \
 %{_datadir}/openstack-dashboard/openstack_dashboard/enabled/*
 
 %changelog
-* Mon May 18 2015 Amit Bose <bose@noironetworks.com> - 2014.2.1-1
-- [Placeholder]
+* Thu Mar 26 2015 Amit Bose <bose@noironetworks.com> - 2014.2.1-1
+- Update to 2014.2.1
 
 * Fri Jan  9 2015 Robert Kukura <rk@theep.net> - 2014.2-1
 - Update to upstream 2014.2
