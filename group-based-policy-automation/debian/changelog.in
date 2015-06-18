@@ -1,8 +1,8 @@
 group-based-policy-automation (@VERSION@-@REVISION@) trusty; urgency=low
 
-  * Update to 2014.2.1
+  * [Placeholder for kilo]
 
- -- Amit Bose <bose@noironetworks.com>  Thu, 26 Mar 2015 22:53:44 +0000
+ -- Amit Bose <bose@noironetworks.com>  Thu, 18 Jun 2015 22:53:44 +0000
 
 group-based-policy-automation (2014.2-1) utopic; urgency=medium
 

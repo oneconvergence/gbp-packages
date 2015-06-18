@@ -1,5 +1,11 @@
 group-based-policy-ui (@VERSION@-@REVISION@) trusty; urgency=low
 
+  * [Placeholder for kilo]
+
+ -- Amit Bose <bose@noironetworks.com>  Thu, 18 Jun 2015 22:53:44 +0000
+
+group-based-policy-ui (2014.2.1-1) trusty; urgency=low
+
   * Update to 2014.2.1
 
  -- Amit Bose <bose@noironetworks.com>  Thu, 26 Mar 2015 22:53:44 +0000

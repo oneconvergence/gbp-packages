@@ -11,7 +11,7 @@ Build-Depends-Indep:
  python-mock (>= 1.0),
  python-mox (>= 0.5.3),
  python-mysqldb (>= 1.2.3),
- python-neutronclient (>= 1:2.3.8),
+ python-neutronclient (>= 1:2.4.0),
  python-oslosphinx (>= 2.2.0),
  python-oslotest (>= 1:1.1.0),
  python-pbr (>= 0.8.0),
@@ -31,7 +31,7 @@ Vcs-Browser: http://git.openstack.org/cgit/stackforge/group-based-policy-automat
 
 Package: group-based-policy-automation
 Architecture: all
-Depends: heat-engine (>= 2014.2), ${misc:Depends}, ${python:Depends}
+Depends: heat-engine (>= 2015.1), ${misc:Depends}, ${python:Depends}
 Description: Heat automation for Openstack Group Based Policy
  Group Based Policy (GBP) provides declarative abstractions for achieving
  scalable intent-based infrastructure automation. This package provides the

@@ -1,5 +1,11 @@
 python-group-based-policy-client (@VERSION@-@REVISION@) trusty; urgency=low
 
+  * [Placeholder for kilo]
+
+ -- Amit Bose <bose@noironetworks.com>  Thu, 18 Jun 2015 22:53:44 +0000
+
+python-group-based-policy-client (0.9.1-1) trusty; urgency=low
+
   * Update to 0.9.1
 
  -- Amit Bose <bose@noironetworks.com>  Tue, 7 Apr 2015 22:53:44 +0000
