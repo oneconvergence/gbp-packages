@@ -51,6 +51,8 @@ gbp-db-manage --config-file /etc/neutron/neutron.conf upgrade head
 %{python2_sitelib}/group_based_policy*.egg-info
 %{_sysconfdir}/group-based-policy/policy.d/policy.json
 %{_sysconfdir}/servicechain/plugins/msc/*.ini
+%{_sysconfdir}/group-based-policy/drivers/*.ini
+%{_sysconfdir}/group-based-policy/*.ini
 
 %changelog
 * Thu Mar 26 2015 Amit Bose <bose@noironetworks.com> - 2014.2.1-1
