@@ -53,8 +53,13 @@ rm -rf %{buildroot}%{python2_sitelib}/gbpui/openstack_dashboard/tests
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/enabled
+install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static
+install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard
+install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/js
 mv %{buildroot}%{python2_sitelib}/gbpui/_*_gbp_project_add_panel* \
    %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/enabled
+mv %{buildroot}%{python2_sitelib}/gbpui/static/dashboard/js/*.js \
+   %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/js
 
 %files
 %doc LICENSE
@@ -64,6 +69,7 @@ mv %{buildroot}%{python2_sitelib}/gbpui/_*_gbp_project_add_panel* \
 
 %files -n openstack-dashboard-gbp
 %{_datadir}/openstack-dashboard/openstack_dashboard/enabled/*
+%{_datadir}/openstack-dashboard/static/dashboard/js/*
 
 %changelog
 * Thu Jun 18 2015 Amit Bose <bose@noironetworks.com> - 2015.1.0-1
