@@ -23,6 +23,15 @@ case "$1" in
         [ -d /usr/share/openstack-dashboard/openstack_dashboard/enabled ] && \
             ln -s /usr/lib/python2.7/dist-packages/gbpui/_*project*.py \
             /usr/share/openstack-dashboard/openstack_dashboard/enabled
+        [ -d /usr/share/openstack-dashboard/static/dashboard/js ] && \
+            ln -s /usr/lib/python2.7/dist-packages/gbpui/static/dashboard/js/* \
+            /usr/share/openstack-dashboard/static/dashboard/js
+        [ -d /usr/share/openstack-dashboard/static/dashboard/img ] && \
+            ln -s /usr/lib/python2.7/dist-packages/gbpui/static/dashboard/img/* \
+            /usr/share/openstack-dashboard/static/dashboard/img
+        [ -d /usr/share/openstack-dashboard/static/dashboard/css ] && \
+            ln -s /usr/lib/python2.7/dist-packages/gbpui/static/dashboard/css/* \
+            /usr/share/openstack-dashboard/static/dashboard/css
         true
     ;;
 

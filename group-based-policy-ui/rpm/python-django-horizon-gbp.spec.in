@@ -56,10 +56,16 @@ install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboar
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard
 install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/js
+install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/img
+install -d -m 755 %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/css
 mv %{buildroot}%{python2_sitelib}/gbpui/_*_gbp_project_add_panel* \
    %{buildroot}%{_datadir}/openstack-dashboard/openstack_dashboard/enabled
 mv %{buildroot}%{python2_sitelib}/gbpui/static/dashboard/js/*.js \
    %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/js
+mv %{buildroot}%{python2_sitelib}/gbpui/static/dashboard/img/* \
+   %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/img/
+mv %{buildroot}%{python2_sitelib}/gbpui/static/dashboard/css/* \
+   %{buildroot}%{_datadir}/openstack-dashboard/static/dashboard/css/
 
 %files
 %doc LICENSE
@@ -70,6 +76,8 @@ mv %{buildroot}%{python2_sitelib}/gbpui/static/dashboard/js/*.js \
 %files -n openstack-dashboard-gbp
 %{_datadir}/openstack-dashboard/openstack_dashboard/enabled/*
 %{_datadir}/openstack-dashboard/static/dashboard/js/*
+%{_datadir}/openstack-dashboard/static/dashboard/css/*
+%{_datadir}/openstack-dashboard/static/dashboard/img/*
 
 %changelog
 * Thu Mar 26 2015 Amit Bose <bose@noironetworks.com> - 2014.2.1-1

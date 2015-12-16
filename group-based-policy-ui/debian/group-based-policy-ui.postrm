@@ -23,6 +23,8 @@ case "$1" in
     purge|remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
         [ -d /usr/share/openstack-dashboard/openstack_dashboard/enabled ] && \
             find /usr/share/openstack-dashboard/openstack_dashboard/enabled -lname '*/gbpui/*' -delete
+        [ -d /usr/share/openstack-dashboard/static/dashboard ] && \
+            find /usr/share/openstack-dashboard/static/dashboard -lname '*/gbpui/*' -delete
         true
     ;;
 
