@@ -1,4 +1,3 @@
-%global release_name juno
 %define version_py @VERSION_PY@
 
 Name:		openstack-neutron-gbp
@@ -13,8 +12,8 @@ BuildArch:	noarch
 BuildRequires:	python2-devel
 BuildRequires:	python-pbr
 BuildRequires:	python-setuptools
-Requires:	openstack-neutron >= 2015.1
-Requires:	openstack-neutron < 2015.2
+Requires:	openstack-neutron >= 2015.2
+Requires:	openstack-neutron < 2016.1
 
 %description
 Group Based Policy (GBP) provides declarative abstractions for
@@ -55,6 +54,9 @@ gbp-db-manage --config-file /etc/neutron/neutron.conf upgrade head
 %{_sysconfdir}/group-based-policy/*.ini
 
 %changelog
+* Wed Feb 10 2015 Amit Bose <bose@noironetworks.com> - 2015.2.0-1
+- [Placeholder for liberty]
+
 * Thu Jun 18 2015 Amit Bose <bose@noironetworks.com> - 2015.1.0-1
 - [Placeholder for kilo]
 

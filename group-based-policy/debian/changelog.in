@@ -1,6 +1,12 @@
 group-based-policy (@VERSION@-@REVISION@) trusty; urgency=low
 
-  * [Placeholder for kilo]
+  * [Placeholder for Liberty]
+
+ -- Amit Bose <bose@noironetworks.com>  Wed, 11 Feb 2015 17:21:44 +0000
+
+group-based-policy (2015.1-1) trusty; urgency=low
+
+  * Updated upstream to Kilo release
 
  -- Amit Bose <bose@noironetworks.com>  Thu, 18 Jun 2015 22:53:44 +0000
 
