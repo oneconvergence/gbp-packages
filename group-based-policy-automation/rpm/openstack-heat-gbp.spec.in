@@ -12,9 +12,8 @@ BuildArch:	noarch
 BuildRequires:	python2-devel
 BuildRequires:	python-pbr
 BuildRequires:	python-setuptools
-Requires:	openstack-heat-engine >= 2015.2
-Requires:	openstack-heat-engine < 2016.1
-Requires:	python-gbpclient >= 0.11.0
+Requires:	openstack-heat-engine
+Requires:	python-gbpclient
 
 %description
 Heat add-on for Group Based Policy (GBP), which provides declarative

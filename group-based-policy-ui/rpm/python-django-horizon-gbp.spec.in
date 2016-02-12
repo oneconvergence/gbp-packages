@@ -11,9 +11,8 @@ BuildArch:	noarch
 BuildRequires:	python2-devel
 BuildRequires:	python-pbr
 BuildRequires:	python-setuptools
-Requires:	python-django-horizon >= 2015.2
-Requires:	python-django-horizon < 2016.1
-Requires:	python-gbpclient >= 0.11.0
+Requires:	python-django-horizon
+Requires:	python-gbpclient
 
 %description
 Horizon Django application add-on for Group Based Policy (GBP), which
@@ -24,8 +23,8 @@ of network endpoints.
 
 %package -n openstack-dashboard-gbp
 Summary:	Group Based Policy add-on for OpenStack Dashboard
-Requires:	openstack-dashboard >= 2015.1
-Requires:	openstack-dashboard < 2015.2
+Requires:	openstack-dashboard
+Requires:	openstack-dashboard
 Requires:	python-django-horizon-gbp >= %{version}
 
 %description -n openstack-dashboard-gbp

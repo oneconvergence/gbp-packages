@@ -11,8 +11,8 @@ BuildArch:	noarch
 BuildRequires:	python2-devel
 BuildRequires:	python-pbr
 BuildRequires:	python-setuptools
-Requires:	python-neutronclient = 3.1.0
-Requires:	python-heatclient >= 0.4.0
+Requires:	python-neutronclient
+Requires:	python-heatclient
 
 %description
 Client library and command line tool for interacting with OpenStack

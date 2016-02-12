@@ -12,8 +12,7 @@ BuildArch:	noarch
 BuildRequires:	python2-devel
 BuildRequires:	python-pbr
 BuildRequires:	python-setuptools
-Requires:	openstack-neutron >= 2015.2
-Requires:	openstack-neutron < 2016.1
+Requires:	openstack-neutron
 
 %description
 Group Based Policy (GBP) provides declarative abstractions for
