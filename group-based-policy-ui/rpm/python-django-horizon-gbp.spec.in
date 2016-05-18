@@ -64,9 +64,9 @@ mv %{buildroot}%{python2_sitelib}/gbpui/_*_gbp_project_add_panel* \
 
 %files -n openstack-dashboard-gbp
 %{_datadir}/openstack-dashboard/openstack_dashboard/enabled/*
-%{_datadir}/openstack-dashboard/static/dashboard/js/*
-%{_datadir}/openstack-dashboard/static/dashboard/css/*
-%{_datadir}/openstack-dashboard/static/dashboard/img/*
+%{python2_sitelib}/gbpui/static/dashboard/js/*
+%{python2_sitelib}/gbpui/static/dashboard/css/*
+%{python2_sitelib}/gbpui/static/dashboard/img/*
 
 %changelog
 * Wed Feb 10 2016 Amit Bose <bose@noironetworks.com> - 2015.2.0-1
