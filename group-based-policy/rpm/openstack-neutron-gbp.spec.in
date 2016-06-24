@@ -53,6 +53,9 @@ gbp-db-manage --config-file /etc/neutron/neutron.conf upgrade head
 %{_sysconfdir}/group-based-policy/*.ini
 
 %changelog
+* Fri Jun 24 2016 Amit Bose <bose@noironetworks.com> - 4.0.0-1
+- Update to Mitaka
+
 * Wed Feb 10 2016 Amit Bose <bose@noironetworks.com> - 2015.2.0-1
 - [Placeholder for liberty]
 

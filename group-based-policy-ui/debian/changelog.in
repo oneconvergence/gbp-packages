@@ -1,5 +1,11 @@
 group-based-policy-ui (@VERSION@-@REVISION@) trusty; urgency=low
 
+  * Update to Mitaka
+
+ -- Amit Bose <bose@noironetworks.com>  Fri, 24 Jun 2016 15:45:31 +0000
+
+group-based-policy-ui (2015.2-1) trusty; urgency=low
+
   * [Placeholder for Liberty]
 
  -- Amit Bose <bose@noironetworks.com>  Wed, 11 Feb 2016 17:21:44 +0000

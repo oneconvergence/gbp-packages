@@ -41,6 +41,9 @@ rm -rf %{buildroot}%{python2_sitelib}/gbpclient/tests
 %{python2_sitelib}/python_group_based_policy_client-*.egg-info
 
 %changelog
+* Fri Jun 24 2016 Amit Bose <bose@noironetworks.com> - 0.12.0-1
+- Update to Mitaka
+
 * Wed Feb 10 2016 Amit Bose <bose@noironetworks.com> - 2015.2.0-1
 - [Placeholder for liberty]
 
