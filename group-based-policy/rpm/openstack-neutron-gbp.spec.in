@@ -44,6 +44,8 @@ gbp-db-manage --config-file /etc/neutron/neutron.conf upgrade head
 %doc LICENSE
 %doc README.rst
 %doc etc/grouppolicy.ini
+%{_bindir}/nfp
+%{_bindir}/nfp_proxy
 %{_bindir}/gbp-db-manage
 %{python2_sitelib}/gbpservice
 %{python2_sitelib}/group_based_policy*.egg-info
@@ -51,6 +53,7 @@ gbp-db-manage --config-file /etc/neutron/neutron.conf upgrade head
 %{_sysconfdir}/servicechain/plugins/msc/*.ini
 %{_sysconfdir}/group-based-policy/drivers/*.ini
 %{_sysconfdir}/group-based-policy/*.ini
+%{_sysconfdir}/nfp/*.ini
 
 %changelog
 * Wed Feb 10 2016 Amit Bose <bose@noironetworks.com> - 2015.2.0-1
