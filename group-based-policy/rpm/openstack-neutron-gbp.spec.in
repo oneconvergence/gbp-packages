@@ -53,7 +53,7 @@ gbp-db-manage --config-file /etc/neutron/neutron.conf upgrade head
 %{_sysconfdir}/servicechain/plugins/msc/*.ini
 %{_sysconfdir}/group-based-policy/drivers/*.ini
 %{_sysconfdir}/group-based-policy/*.ini
-%{_sysconfdir}/nfp/*.ini
+%{_sysconfdir}/nfp.ini
 
 %changelog
 * Fri Jun 24 2016 Amit Bose <bose@noironetworks.com> - 4.0.0-1
